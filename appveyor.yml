@@ -1,0 +1,12 @@
+image: Visual Studio 2022
+
+configuration: Release
+
+install:
+  - ps: dotnet restore
+
+build_script:
+  - cmd: dotnet build src/NameSorter -c Release
+
+test_script:
+  - cmd: dotnet test tests/NameSorter.Tests -c Release --no-build
